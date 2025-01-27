@@ -74,7 +74,7 @@ app.use((req, res, next) => {
 
 // Task 1: Set up the static middleware
 
-app.use(express.static(-dorname +"/public"))
+app.use(express.static(__dirname +"/public"))
 
 // Task 2: Set up the route handler for / to send back the index.html file
 app.get("/", (req, res)=>{
@@ -95,7 +95,7 @@ app.get("/mens", (req, res)=>{
 
 // Task 5: Set up the route handler for /item/0 which sends back the first item in product.ejs
 app.get("/item/0", (req, res)=>{
-  res.render("product.ejs", inventory[0]items[0]);
+  res.render("product.ejs", inventory[0].items[0]);
 
 })
 
